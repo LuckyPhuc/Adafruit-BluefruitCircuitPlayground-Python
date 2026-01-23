@@ -1,0 +1,43 @@
+import board
+import digitalio
+import time
+from adafruit_circuitplayground import cp
+print(dir(board))
+print(dir(cp.pixels))
+print(dir(cp.switch))
+x=0
+y=0
+z=0
+lit=0
+def adds():
+    global lit
+    time.sleep(0.1)
+    if cp.button_a and cp.button_b:
+        pass
+    elif cp.button_a and not cp.button_b:
+        lit+=1
+    elif cp.button_b and not cp.button_a:
+        lit-=1
+    if lit < 0:
+        lit = 0
+    elif lit > 10:
+        lit = 10
+    print(lit)
+while True:
+    if cp.switch:
+        adds()
+        print(cp.switch)
+        print("Switch OFF")
+        cp.play_tone(100, 0.1)
+        cp.pixels.fill((x,y,z))
+        for j in range(lit):
+            cp.pixels[j]=(x,100,z)
+
+    else:
+        adds()
+        print(cp.switch)
+        print("Switch ON")
+        cp.play_tone(1000, 0.1)
+        cp.pixels.fill((x,y,z))
+        for j in range(lit):
+            cp.pixels[j]=(100,y,z)
