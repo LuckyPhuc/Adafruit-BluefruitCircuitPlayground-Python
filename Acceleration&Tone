@@ -1,0 +1,26 @@
+import board
+import digitalio
+import time
+from adafruit_circuitplayground import cp
+def oracle():
+    x, y, z = cp.acceleration
+    print(x, y, z)
+    time.sleep(1)
+    if x>20 or y>20 or z>20:
+        cp.play_tone(abs(x*y*z),1)
+    if x>y and x>z:
+        if x>9:
+            x=9
+        cp.pixels[int(x)]=x, y, z
+    elif y>x and y>z:
+        if y>9:
+            y=9
+        cp.pixels[int(y)]=x, y, z
+    elif z>y and z>x:
+        if z>9:
+            z=9
+        cp.pixels[int(z)]=x, y, z
+    time.sleep(1)
+
+while True:
+    oracle()
