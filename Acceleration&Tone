@@ -2,7 +2,7 @@ import board
 import digitalio
 import time
 from adafruit_circuitplayground import cp
-def oracle():
+def function():
     x, y, z = cp.acceleration
     print(x, y, z)
     time.sleep(1)
@@ -23,4 +23,4 @@ def oracle():
     time.sleep(1)
 
 while True:
-    oracle()
+    function()
