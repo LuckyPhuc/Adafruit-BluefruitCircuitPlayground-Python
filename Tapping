@@ -1,0 +1,10 @@
+import time
+from adafruit_circuitplayground import cp
+
+cp.detect_taps = 1
+x=0
+while True:
+    if cp.tapped:
+        x+=1
+        print("Tapped",x)
+        time.sleep(0.1)
