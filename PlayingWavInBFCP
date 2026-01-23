@@ -1,0 +1,12 @@
+import board
+import digitalio
+import time
+from adafruit_circuitplayground import cp
+
+while True:
+    if cp.button_a:
+        cp.play_file("RecordingName.wav")
+    elif cp.button_b:
+        cp.play_file("RecordingName.wav")
+
+
