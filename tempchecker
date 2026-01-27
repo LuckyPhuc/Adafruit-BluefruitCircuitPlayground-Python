@@ -1,0 +1,43 @@
+import time
+from adafruit_circuitplayground import cp
+based_tone=587
+# Define the temperature/ threshold in Celsius
+TEMP_THRESHOLD = 30
+core = 1
+while True:
+    cp.red_led = True
+    time.sleep(0.5)
+    cp.red_led = False
+    temp_c = cp.temperature
+    print("Temperature C:", temp_c)
+    print("Temperature F:", temp_c * 1.8 + 32)
+    
+    if temp_c > TEMP_THRESHOLD:
+        # Flash the LEDs if the temperature exceeds the threshold
+            print("start tone")
+            cp.start_tone(based_tone-500)
+            cp.pixels.fill((255, 0, 0))  # Red color
+            time.sleep(0.1)   
+            cp.pixels.fill((0, 0, 0))    # Off
+            time.sleep(0.2)
+            cp.pixels.fill((142, 0, 204))    # Pink color
+            time.sleep(0.2)
+            cp.start_tone(0)
+            print("stopped tone")
+            time.sleep(0.1)
+    if temp_c < TEMP_THRESHOLD-1:
+        time.sleep(.2)
+        cp.start_tone(0)
+        print("stopped tone")
+        time.sleep(0.1)
+        cp.pixels.fill((255, 255, 255))  # White color if temperature is below threshold
+    else:
+        time.sleep(.2)
+        cp.start_tone(0)
+        print("stopped tone")
+        time.sleep(0.1)
+        cp.pixels.fill((core,2*core,core))
+        core+=2
+        if core>220:
+            core=1
+
