@@ -5,14 +5,14 @@ def main():
     print("Starting <Specific Part> Of Code Challenge")
     # Enter Your Code Here:
     print('Enter Your Code Here:')
-    x = 7
-    print(x)
-    x = 7
-    print(x)
-    if x == 7 :
-      print(x,"is equal to Seven")
-
-    
+    my_number = input("enter a number > ")
+    try:
+      my_number = int(my_number)
+      print(my_number, 'is a number')
+    except:
+      print('Please enter a number')
+      print(my_number, 'is NOT a number')
+    print('done')
     print("Ending <Specific Part> Of Code Challenge")
     print("Ending The Code Challenge")
 
