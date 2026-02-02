@@ -1,0 +1,7 @@
+x=10
+y=input("User input number.")
+while x != y:
+  y+=1
+  print(x)
+  print(y)
+print("The User variable is equal to count variable.")
