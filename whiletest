@@ -1,0 +1,12 @@
+x=input("Pick a number. ")
+count=0
+try:
+    x=int(x)
+    while x>1:
+        x=x/2
+        print("The current value of the user input after some math is", x)
+        count+=1
+        print("The while loop has looped" ,5, "time.")
+except:
+    print(x, "is not a number")
+    print(x)
