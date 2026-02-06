@@ -1,0 +1,46 @@
+# Functions - Passing Arguments
+print('''Functions - Passing Arguments
+Learn more about Functions here:
+https://www.w3schools.com/python/python_functions.asp
+''')      
+print('''
+Challenge #1
+Run this code
+Run, then Edit the code in the template example:
+      
+Can you follow and explain
+- How arguments are passed from the main code to the function?
+- Can you explain how a value is 'returned'
+      ''')
+def greet(lang):
+    if lang == 'es':
+        return'Hola'
+    elif lang == 'fr':
+        return'Bonjour'
+    elif lang=='v':
+        return'Xin Chao'
+    elif lang =='cn':
+        return 'ni hao'
+    elif lang =='noak':
+        return'gkljhwewg'
+    else:
+        return'Hello'
+
+def main():
+    print(greet('en'),'Glenn')
+    print(greet('fr'),'Sabine')
+    print(greet('es'),'Carlos')
+    print(greet('v'),'Orbital')
+    print(greet('cn'),'Mormandy')
+    print(greet('naok'),'U-sbek')
+    
+main()
+print(greet(input("What language do you speak? (en,fr,es,v,cn,noak) ")),input('What is your name? '))
+print('''
+Challenge #2
+Add a few new Languages…
+Swahili, Ukrainian, Middle Earth Elven, or maybe Klingon
+
+Challenge #3
+Add asking the User for their name and language, then say hi.
+      ''')
